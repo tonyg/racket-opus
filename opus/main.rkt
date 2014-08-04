@@ -20,7 +20,7 @@
 (require ffi/unsafe/cvector)
 (require ffi/vector)
 
-(define opus-lib (ffi-lib "libopus"))
+(define opus-lib (ffi-lib "libopus" '("0" #f)))
 
 (define-ffi-definer define-opus opus-lib #:default-make-fail make-not-available)
 
