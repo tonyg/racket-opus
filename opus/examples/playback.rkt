@@ -6,8 +6,8 @@
 
 (define f (open-input-file "tmp-out.hex"))
 
-(define s (pa-default-output-stream 2 'paInt16 48000 #f #f))
-(define d (make-opus-decoder 48000 2))
+(define s (pa-default-output-stream 2 'paInt16 12000 #f #f))
+(define d (make-opus-decoder 12000 2))
 
 (pa-start-stream s)
 
