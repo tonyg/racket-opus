@@ -7,8 +7,8 @@
 (define f (open-output-file "tmp-out.hex" #:exists 'replace))
 
 (define start-time (current-inexact-milliseconds))
-(define s (pa-default-input-stream 2 'paInt16 12000 #f #f))
-(define e (make-opus-encoder 12000 2 'opus-application-voip))
+(define s (pa-default-input-stream 1 'paInt16 12000 #f #f))
+(define e (make-opus-encoder 12000 1 'opus-application-voip))
 
 (pa-start-stream s)
 
