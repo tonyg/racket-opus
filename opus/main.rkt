@@ -201,7 +201,7 @@
 (define (opus-decode-float state input-data
 			   #:frame-size-limit [max-frame-size (max-useful-frame-size state)]
 			   #:decode-fec? [decode-fec? #f])
-  (define frames (make-bytes (* 2 (decoder-state-num-output-channels state) max-frame-size) 0))
+  (define frames (make-bytes (* 4 (decoder-state-num-output-channels state) max-frame-size) 0))
   (define actual-frame-count (die-if-error 'opus-decode
 					   (opus_decode (decoder-state-bytes state)
 							input-data
