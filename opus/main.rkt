@@ -203,10 +203,10 @@
 			   #:decode-fec? [decode-fec? #f])
   (define frames (make-bytes (* 4 (decoder-state-num-output-channels state) max-frame-size) 0))
   (define actual-frame-count (die-if-error 'opus-decode
-					   (opus_decode (decoder-state-bytes state)
-							input-data
-							(bytes-length input-data)
-							frames
-							max-frame-size
-							decode-fec?)))
+					   (opus_decode_float (decoder-state-bytes state)
+							      input-data
+							      (bytes-length input-data)
+							      frames
+							      max-frame-size
+							      decode-fec?)))
   (subbytes frames 0 (* 4 (decoder-state-num-output-channels state) actual-frame-count)))
